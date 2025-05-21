@@ -12,18 +12,25 @@
       rel="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
       rel="stylesheet" />
 
-      <!-- SweetAlert2 CSS & JS -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- SweetAlert2 CSS & JS -->~
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Feather Icons-->
     <script>
-  // Cek status login
-  if (localStorage.getItem("isLoggedIn") !== "true") {
-    alert("Silakan login terlebih dahulu!");
-    window.location.href = "../login/index.html";
-  }
+      // Cek status login
+      if (localStorage.getItem("isLoggedIn") !== "true") {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Silakan login terlebih dahulu!',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        window.location.href = "../login/index.html";
+      });
+    }
 
-  function logout() {
+    function logout() {
       Swal.fire({
         title: 'Yakin logout?',
         text: "Anda akan keluar dari akun.",
@@ -36,10 +43,19 @@
       }).then((result) => {
         if (result.isConfirmed) {
           localStorage.removeItem("isLoggedIn");
-          window.location.href = "../login/index.html";
+          Swal.fire({
+            icon: 'success',
+            title: 'Berhasil keluar',
+            text: 'Anda Berhasil Keluar',
+            showConfirmButton: false,
+            timer: 1500
+          }).then(() => {
+            window.location.href = "../login/index.html";
+          });
         }
       });
     }
+
 </script>
 
     <!-- My Style -->
