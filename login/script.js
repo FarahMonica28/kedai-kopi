@@ -18,7 +18,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
       showConfirmButton: false,
       timer: 2000
     }).then(() => {
-      window.location.href = "../dashboard/index.html";
+      window.location.href = "../index.html";
     });
 
   } else {
