@@ -4,9 +4,10 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
 
-  const users = JSON.parse(localStorage.getItem("users") || "{}");
+  const validUsername = "admin";
+  const validPassword = "kopirasa";
 
-  if (users[username] && users[username] === password) {
+  if (username === validUsername && password === validPassword) {
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("loggedUser", username);
 
@@ -17,7 +18,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
       showConfirmButton: false,
       timer: 2000
     }).then(() => {
-      window.location.href = "../index.html";
+      window.location.href = "../dashboard/index.html";
     });
 
   } else {
