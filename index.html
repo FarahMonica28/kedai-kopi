@@ -10,11 +10,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
 
     <!-- Feather Icons-->
     <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        // Cek status login
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+      alert("Silakan login terlebih dahulu!");
+      window.location.href = "../login/index.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "../login/index.html";
+    }
+  </script>
 
     <!-- My Style -->
     <link rel="stylesheet" href="css/style.css" />
@@ -36,6 +47,7 @@
         <a href="#" id="search"></a><i data-feather="search"></i>
         <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        <button onclick="logout()">Logout</button>
       </div>
     </nav>
     <!-- Navbar end -->
@@ -81,12 +93,14 @@
     <section id="menu" class="menu">
       <h2><span>Menu</span> Kami</h2>
       <p>
-        Dari espresso yang kuat hingga arabica yang lembut — semua diracik dengan biji kopi premium dan penuh rasa.
+        Dari espresso yang kuat hingga arabica yang lembut — semua diracik
+        dengan biji kopi premium dan penuh rasa.
       </p>
       <!-- menu 1 -->
       <div class="row">
         <div class="menu-card">
-          <img src="img/menu/espresso.jpg" alt="Espresso" class="menu-card-img" />
+          <img src="img/menu/espresso.jpg" alt="Espresso"
+            class="menu-card-img" />
           <h3 class="menu-card-title">- Espresso -</h3>
           <p class="menu-card-price">IDR 12K</p>
         </div>
@@ -95,8 +109,7 @@
           <img
             src="img/menu/americano.jpg"
             alt="Espresso"
-            class="menu-card-img"
-          />
+            class="menu-card-img" />
           <h3 class="menu-card-title">- americano -</h3>
           <p class="menu-card-price">IDR 15K</p>
         </div>
@@ -105,8 +118,7 @@
           <img
             src="img/menu/arabika.jpg"
             alt="Espresso"
-            class="menu-card-img"
-          />
+            class="menu-card-img" />
           <h3 class="menu-card-title">- Arabica -</h3>
           <p class="menu-card-price">IDR 20K</p>
         </div>
@@ -115,8 +127,7 @@
           <img
             src="img/menu/robusta.jpg"
             alt="Espresso"
-            class="menu-card-img"
-          />
+            class="menu-card-img" />
           <h3 class="menu-card-title">- Robusta -</h3>
           <p class="menu-card-price">IDR 18K</p>
         </div>
@@ -128,19 +139,19 @@
     <section id="contact" class="contact">
       <h2><span>Kontak</span> Kami</h2>
       <p>
-        Kami senang mendengar dari Anda. Silakan hubungi kami untuk pertanyaan, saran, atau pemesanan.
+        Kami senang mendengar dari Anda. Silakan hubungi kami untuk pertanyaan,
+        saran, atau pemesanan.
       </p>
 
       <div class="row">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126646.20960984043!2d112.6302810370335!3d-7.275612006126597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbf8381ac47f%3A0x3027a76e352be40!2sSurabaya%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1741242430022!5m2!1sid!2sid"
-          allowfullscreen=""
+          allowfullscreen
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          class="map"
-        ></iframe>
+          class="map"></iframe>
 
-        <form action="" class="one">
+        <form action class="one">
           <div class="input-group">
             <i data-feather="user"></i>
             <input type="text" placeholder="nama" />
@@ -175,7 +186,7 @@
       </div>
 
       <div class="credit">
-        <p>Created by <a href="">FarahMonica</a>. | &copy; 2023</p>
+        <p>Created by <a href>FarahMonica</a>. | &copy; 2023</p>
       </div>
     </footer>
     <!-- Footer end -->
