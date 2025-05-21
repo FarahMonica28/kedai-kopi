@@ -10,7 +10,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const validPassword = "kopirasa";
 
   if (username === validUsername && password === validPassword) {
-  alert("Login berhasil! Selamat datang di Kedai Kopi Hanaya.");
+  alert("Login berhasil! Selamat datang di Kedai Kopi Rasa.");
   // Simpan status login
   localStorage.setItem("isLoggedIn", "true");
   // Arahkan ke halaman dashboard
